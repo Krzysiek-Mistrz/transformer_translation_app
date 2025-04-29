@@ -12,7 +12,7 @@ class PositionalEncoding(nn.Module):
         pe = torch.zeros(maxlen, emb_size)
         pe[:, 0::2] = torch.sin(pos * den)
         pe[:, 1::2] = torch.cos(pos * den)
-        self.pos_embedding = pe.unsqueeze(1)  # (maxlen, 1, emb_size)
+        self.pos_embedding = pe.unsqueeze(1)
         self.dropout = nn.Dropout(dropout)
     def forward(self, x: Tensor) -> Tensor:
         x = x + self.pos_embedding[:x.size(0), :]

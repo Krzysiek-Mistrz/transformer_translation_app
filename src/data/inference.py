@@ -2,7 +2,7 @@ import torch
 from torch import Tensor
 from typing import List
 
-from model import Seq2SeqTransformer
+from src.models.model import Seq2SeqTransformer
 from utils import generate_square_subsequent_mask
 from data_loader import text_transform, vocab_transform, BOS_IDX, EOS_IDX
 

@@ -2,7 +2,6 @@ import torch
 from torch import Tensor
 from typing import Tuple
 
-# Must match data_loader's PAD_IDX
 PAD_IDX = 1
 
 def generate_square_subsequent_mask(sz: int, device: torch.device = torch.device('cpu')) -> Tensor:
